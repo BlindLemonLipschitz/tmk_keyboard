@@ -38,6 +38,14 @@
 # To rebuild project do "make clean" then "make all".
 #----------------------------------------------------------------------------
 
+# get keymap_passwords.h
+gpg:
+	./gpg.sh
+
+# clean up keymap_passwords.h
+clean:
+	srm ./keymap_passwords.h
+
 # Target file name (without extension).
 TARGET = planck_lufa
 
@@ -50,13 +58,12 @@ TARGET_DIR = .
 # project specific files
 SRC =	keymap_common.c \
 	matrix.c \
-	led.c \
-	backlight.c
+	led.c
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymap_jack.c $(SRC)
+    SRC := keymap_blind.c $(SRC)
 endif
 
 CONFIG_H = config.h
@@ -119,10 +126,9 @@ MOUSEKEY_ENABLE = yes	# Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes	# Audio control and System control(+450)
 CONSOLE_ENABLE = yes	# Console for debug(+400)
 COMMAND_ENABLE = yes    # Commands for debug and configuration
-# Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 #SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
-BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
+
 
 # Optimize size but this may cause error "relocation truncated to fit"
 #EXTRALDFLAGS = -Wl,--relax
@@ -134,3 +140,7 @@ VPATH += $(TOP_DIR)
 include $(TOP_DIR)/protocol/lufa.mk
 include $(TOP_DIR)/common.mk
 include $(TOP_DIR)/rules.mk
+blind: OPT_DEFS += -DKEYMAP_BLIND
+blind: all
+blind: teensy
+blind: clean
