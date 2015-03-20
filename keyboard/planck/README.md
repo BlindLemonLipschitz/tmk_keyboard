@@ -2,7 +2,8 @@ Planck keyboard firmware
 ======================
 DIY/Assembled compact ortholinear keyboard by [Ortholinear Keyboards](http://ortholinearkeyboards.com).
 # BlindLemonLipschitz Fork of Jack's Fork of Hassu's firmware
-![my keymap](https://github.com/BlindLemonLipschitz/tmk_keyboard/edit/master/keyboard/planck/keymap_blind.png)
+![my keymap](https://raw.githubusercontent.com/BlindLemonLipschitz/tmk_keyboard/master/keyboard/planck/keymap_blind.png)
+
 ## Notable TMK forks (which some of the keymap files are from)
 - [Shane's Fork](https://github.com/shanecelis/tmk_keyboard/tree/master/keyboard/planck)
 - [Pierre's Fork](https://github.com/pcarrier/tmk_keyboard/blob/pcarrier/planck/keyboard/gh60/keymap_planck.c)
