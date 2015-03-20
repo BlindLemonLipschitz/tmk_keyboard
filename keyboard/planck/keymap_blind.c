@@ -19,22 +19,50 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [3] = KEYMAP( /* Media + Macros, keys on left side of board*/
   POWER, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, 
   TRNS, MPRV, MPLY, MNXT, VOLD, VOLU, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, 
-  TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, 
-  TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS), 
+  TRNS, FN5, FN6, FN7, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, 
+  FN9, FN8, FN10, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS), 
 [4] = KEYMAP( /* Mouse + Arrow, keys on right side of board*/
   TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, 
   TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, MS_L, MS_D, MS_U, MS_R, TRNS, TRNS, 
   TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, LEFT, DOWN, UP, RIGHT, TRNS, TRNS, 
   TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, MS_BTN1, MS_BTN2, TRNS, TRNS, TRNS),
 };
+enum macro_id {
+PASSWORD1,
+PASSWORD2,
+PASSWORD3,
+PASSWORD4,
+PASSWORD5,
+HELP,
+};
+/*
+ * Macro definition
+ */
+#include "keymap_passwords.h"
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    if (record->event.pressed) {
+        switch (id) {
+            case PASSWORD1:     return MACRO_PASSWORD1;
+            case PASSWORD2:     return MACRO_PASSWORD2;
+            case PASSWORD3:     return MACRO_PASSWORD3;
+            case PASSWORD4:     return MACRO_PASSWORD4;
+            case PASSWORD5:     return MACRO_PASSWORD5;
+            case HELP:          return MACRO_HELP;
+	}
+    }return MACRO_NONE;
+}
 const uint16_t PROGMEM fn_actions[] = {
-    [2] = ACTION_LAYER_TAP_KEY(1, KC_BSPC), // Numbers
-    [3] = ACTION_LAYER_TAP_KEY(2, KC_ENT), // Shifted Numbers
-    [4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SPC),
-    [5] = ACTION_LAYER_TAP_KEY(3, KC_N), // Media Keys
-    [6] = ACTION_LAYER_TAP_KEY(4, KC_B), // Mouse and Arrows
-
-    [10] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),
+    [0]  = ACTION_LAYER_TAP_KEY(3, KC_N),      // Media Keys
+    [1]  = ACTION_LAYER_TAP_KEY(4, KC_B),      // Mouse and Arrows
+    [2]  = ACTION_LAYER_TAP_KEY(1, KC_BSPC),   // Numbers
+    [3]  = ACTION_LAYER_TAP_KEY(2, KC_ENT),    // Shifted Numbers
+    [4]  = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SPC),
+    [5]  = ACTION_MACRO(PASSWORD1),
+    [6]  = ACTION_MACRO(PASSWORD2),
+    [7]  = ACTION_MACRO(PASSWORD3),
+    [8]  = ACTION_MACRO(PASSWORD4),
+    [9]  = ACTION_MACRO(HELP),
+    [10] = ACTION_MACRO(PASSWORD5),
     [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
     [12] = ACTION_MODS_KEY(MOD_LSFT, KC_2),
     [13] = ACTION_MODS_KEY(MOD_LSFT, KC_3),
@@ -51,4 +79,5 @@ const uint16_t PROGMEM fn_actions[] = {
     [24] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
     [25] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
     [26] = ACTION_MODS_KEY(MOD_LSFT, KC_BSLS),
+    [27] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),
 };
