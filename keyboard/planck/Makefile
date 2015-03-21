@@ -76,7 +76,7 @@ SRC =	extended_keymap_common.c \
 ifdef KEYMAP
     SRC := extended_keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymap_blind.c $(SRC)
+    SRC := extended_keymap_blind.c $(SRC)
 endif
 
 CONFIG_H = config.h
