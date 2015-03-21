@@ -4,7 +4,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = KEYMAP( /* Base */
   TAB, Q, W, E, R, T, Y, U, I, O, P, MINS, 
   LCTL, A, S, D, F, G, H, J, K, L, SCLN, QUOTE, 
-  LSFT, Z, X, C, V, FN6, FN5, M, COMM, DOT, SLSH, LSFT, 
+  FN28, Z, X, C, V, FN6, FN5, M, COMM, DOT, SLSH, LSFT, 
   ESC, LCTL, LALT, LGUI, FN2, FN4, FN3, RGUI, RALT, FN5, TRNS),
 [1] = KEYMAP( /* numbers*/
   GRV, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, TRNS, 
@@ -56,6 +56,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [1]  = ACTION_LAYER_TAP_KEY(4, KC_B),      // Mouse and Arrows
     [2]  = ACTION_LAYER_TAP_KEY(1, KC_BSPC),   // Numbers
     [3]  = ACTION_LAYER_TAP_KEY(2, KC_ENT),    // Shifted Numbers
+    [28] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS)
     [4]  = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SPC),
     [5]  = ACTION_MACRO(PASSWORD1),
     [6]  = ACTION_MACRO(PASSWORD2),
