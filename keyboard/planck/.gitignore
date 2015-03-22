@@ -3,3 +3,10 @@ keymap.c.bak
 keymap_passwords.h
 keymap_passwords.h.gpg
 new.rb
+keymap_blind.c
+keymap_blind.txt
+ascii_key.rb
+ascii_template.erb
+
+
+
