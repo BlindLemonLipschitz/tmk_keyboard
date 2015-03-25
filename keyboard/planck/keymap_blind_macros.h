@@ -7,3 +7,5 @@
 #define MACRO_ITUNES        MACRO( I(15), D(LGUI), T(SPACE), U(LGUI), W(500), T(S), T(E), T(A), T(R), T(C), T(H), D(RSFT), T(MINS), U(RSFT), T(I), T(T), T(U), T(N), T(E), T(S), T(ENT), END)
 // open pinboard in Chrome
 #define MACRO_PINBOARD        MACRO( I(15), D(LGUI), T(SPACE), U(LGUI), W(500), T(C), T(H), T(R), T(O), T(M), T(E), T(ENT), W(500), D(LGUI), T(L), U(LGUI), T(P), T(I), T(N), T(B), T(O), T(A), T(R), T(D), T(DOT), T(I), T(N), T(ENT), END)
+// read later, pinboard in Chrome
+#define MACRO_READLATER        MACRO( I(15), D(LGUI), T(SPACE), U(LGUI), W(500), T(C), T(H), T(R), T(O), T(M), T(E), T(ENT), W(500), D(LGUI), T(L), U(LGUI), T(P), T(ENT), END)

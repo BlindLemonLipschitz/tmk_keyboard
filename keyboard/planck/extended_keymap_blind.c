@@ -1,17 +1,17 @@
 #include "extended_keymap_common.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[0] = {  // layer 1: Base
+[0] = {  // layer 0: Base
 {KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS},
 {KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOTE},
 {FUNC(11), KC_Z, KC_X, KC_C, KC_V, FUNC(1), FUNC(0), KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_LSFT},
-{KC_ESC, KC_LCTL, KC_LALT, KC_LGUI, FUNC(2), FUNC(4), KC_NO, FUNC(3), KC_RGUI, KC_RALT, FUNC(12), FUNC(13)}},
+{KC_ESC, KC_LCTL, KC_LALT, KC_LGUI, FUNC(2), FUNC(4), KC_NO, FUNC(3), KC_RGUI, KC_RALT, FUNC(12), FUNC(15)}},
 
 [1] = {  // layer 1: Numbers
 {KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
-{KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_TRNS, KC_TRNS, KC_TRNS}},
+{KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_TRNS, KC_TRNS, FUNC(13)}},
 
 [2] = {  // layer 2: Shifted Numbers
 {S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), S(KC_MINS)},
@@ -19,13 +19,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS}},
 
-[3] = {  // layer 4: Mouse + Arrow, keys on right side of board
+[3] = {  // layer 3: Mouse + Arrow, keys on right side of board
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, FUNC(14), KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_TRNS, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_TRNS, KC_TRNS, KC_TRNS}},
 
-[4] = {  // layer 3: Media + Macros, keys on left side of board
+[4] = {  // layer 4: Media + Macros, keys on left side of board
 {KC_POWER, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11},
 {KC_TRNS, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
 {KC_TRNS, FUNC(5), FUNC(6), FUNC(7), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS},
@@ -41,6 +41,7 @@ GOOGLE,
 HELP,
 ITUNES,
 PINBOARD,
+READLATER,
 };
 /*
  * Macro definition
@@ -59,6 +60,8 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
             case HELP:          return MACRO_HELP;
             case ITUNES:        return MACRO_ITUNES;
             case PINBOARD:      return MACRO_PINBOARD;
+            case READLATER:     return MACRO_READLATER;
+			
 
 	}
     }return MACRO_NONE;
@@ -79,4 +82,5 @@ const uint16_t PROGMEM fn_actions[] = {
     [12] = ACTION_MACRO(GOOGLE),		      // FN12 - Google
     [13] = ACTION_MACRO(PINBOARD),		      // FN13 - Pinboard
     [14] = ACTION_MACRO(ITUNES),		      // FN14 - Itunes
+    [15] = ACTION_MACRO(READLATER),                   // FN15 - Read later Pinboard
 };
