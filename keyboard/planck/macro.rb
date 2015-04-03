@@ -3,7 +3,7 @@ require 'optparse'
 # convert a string into macro syntax for TMK firmware
 # usage:  ruby macro.rb STRING NAME_OF_MACRO
 # Example: 
-# prompt# ruby macro.rb "this\"is aPa33word" name
+# prompt# ruby macro.rb -p "this\"is aPa33word" -n NAME
 # "T(T), T(H), T(I), T(S), D(LSFT), T(QUOT), U(LSFT), T(I), T(S), D(LSFT),/
 # T(SPC), U(LSFT), T(A), D(LSFT), T(P), U(LSFT), T(A), T(3), T(3), T(W),/
 # T(O), T(R), T(D), "
@@ -47,7 +47,7 @@ end
 
 shifted_special_chars = { "+" => "EQL", "_" => "MINS", "!" => "1", "@" => "2", "#" => "3", '$' => "4", "%" => "5", "^" => "6", "&" => "7", "*" => "8", "(" => "9", ")" => "0" , "~" => "GRV", "?" => "SLSH", "<" => "COMM", ">" => "DOT", "{" => "LBRC", "}" => "RBRC", "|" => "BSLS", '"' => "QUOT", ":" => "SCLN"}
 
-unshifted_special_chars = { "=" => "EQL", "-" => "MINS", "`" => "GRV", "/" => "SLSH", "," => "COMM", ";" => "SCLN", "." => "DOT", "[" => "LBRC", "]" => "RBRC", "\\" => "BSLS", '"' => "QUOT", " " => "SPC"}
+unshifted_special_chars = { "=" => "EQL", "-" => "MINS", "`" => "GRV", "/" => "SLSH", "," => "COMM", ";" => "SCLN", "." => "DOT", "[" => "LBRC", "]" => "RBRC", "\\" => "BSLS", "'" => "QUOT", " " => "SPC"}
 
 def type(char)
   "T(#{char})"
