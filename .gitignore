@@ -11,3 +11,5 @@ tags
 *~
 build/
 *.bak
+*.gpg
+*password*
