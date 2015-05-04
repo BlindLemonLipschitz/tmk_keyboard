@@ -1,4 +1,5 @@
-Planck keyboard firmware
+   ![keymap](https://raw.githubusercontent.com/BlindLemonLipschitz/tmk_keyboard/workman/keyboard/planck/keymap_blind.png)
+   Planck keyboard firmware
 ======================
 DIY/Assembled compact ortholinear 40% keyboard by [Ortholinear Keyboards](http://ortholinearkeyboards.com).
 
