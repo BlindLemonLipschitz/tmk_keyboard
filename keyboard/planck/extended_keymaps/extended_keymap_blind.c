@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [2] = {  // layer 2: Numbers and Special Chars
 {S(KC_GRV), S(KC_5), S(KC_7), S(KC_SLSH), S(KC_EQL), S(KC_2), S(KC_4), S(KC_MINS), KC_LBRC, KC_RBRC, S(KC_1), S(KC_6)},
-{KC_GRV, KC_SLSH, S(KC_9), KC_EQL, KC_0, S(KC_LBRC), S(KC_RBRC), KC_1, S(KC_8), S(KC_0), KC_EQL, S(KC_3)},
+{KC_GRV, KC_SLSH, S(KC_9), KC_EQL, KC_0, S(KC_LBRC), S(KC_RBRC), KC_1, S(KC_8), S(KC_0), KC_MINS, S(KC_3)},
 {FUNC(11), KC_6, KC_7, KC_8, KC_9, S(KC_BSLS), KC_BSLS, KC_2, KC_3, KC_4, KC_5, KC_RSFT},
 {KC_TRNS, KC_TRNS, FUNC(1), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, FUNC(0), KC_TRNS, KC_TRNS}},
 
