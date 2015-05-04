@@ -2,7 +2,7 @@
    Planck keyboard firmware
 ======================
 DIY/Assembled compact ortholinear 40% keyboard by [Ortholinear Keyboards](http://ortholinearkeyboards.com).
-
+### TODO: fix bottom row in extended_keymap_blind.c for 9 keys instead of 11 (not sure which keys will become KC_NO yet)
 ## Extended Keymap
 If you include extended_keymap_common.h instead of keymap_common.h at the top of your file, you'll have access to a bunch of goodies:
 
